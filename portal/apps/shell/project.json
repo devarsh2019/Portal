@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/angular:webpack-browser",
+      "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/shell",
@@ -23,10 +23,7 @@
           }
         ],
         "styles": ["apps/shell/src/styles.scss"],
-        "scripts": [],
-        "customWebpackConfig": {
-          "path": "apps/shell/webpack.config.ts"
-        }
+        "scripts": []
       },
       "configurations": {
         "production": {
@@ -42,10 +39,7 @@
               "maximumError": "8kb"
             }
           ],
-          "outputHashing": "all",
-          "customWebpackConfig": {
-            "path": "apps/shell/webpack.prod.config.ts"
-          }
+          "outputHashing": "all"
         },
         "development": {
           "buildOptimizer": false,
@@ -59,7 +53,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nx/angular:module-federation-dev-server",
+      "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "shell:build:production"
@@ -68,10 +62,7 @@
           "buildTarget": "shell:build:development"
         }
       },
-      "defaultConfiguration": "development",
-      "options": {
-        "publicHost": "http://localhost:4200"
-      }
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

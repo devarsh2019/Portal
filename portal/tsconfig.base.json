@@ -14,15 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "auth/Routes": ["auth/src/app/remote-entry/entry.routes.ts"],
-      "employeeOnboarding/Routes": [
-        "employeeOnboarding/src/app/remote-entry/entry.routes.ts"
-      ],
-      "resourceAllocation/Routes": [
-        "resourceAllocation/src/app/remote-entry/entry.routes.ts"
-      ]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }
